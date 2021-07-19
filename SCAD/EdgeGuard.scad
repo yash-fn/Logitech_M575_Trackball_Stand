@@ -22,7 +22,8 @@ ScannedEdgeGaurd();
 ;
 
     j=1.2;
-    translate([-0.1,-0.1,.15+0.4+0.2])
+    difference(){
+    translate([-0.1,-0.1,.15+0.4+0.2-1.2])
     color("red")
     difference(){
         hull()
@@ -34,42 +35,37 @@ ScannedEdgeGaurd();
         hull()
         EdgeGaurdSkin();
     }
+    translate([-65,-6,-5])
+    rotate(-21.15)
+    cube([50,140,5]);
+}
 
 };
 ;
 
-
 module Ridge() {
 
 module FullRidge() {
-module BasewithRim() {
-offset(r=RidgeRimWidth)
-ScannedBase();
-}
+    
+intersection(){
 color("#008F39")
-linear_extrude(BaseHeight+RidgeHeight)
+translate([0,0,-BaseHeight])
+linear_extrude(RidgeHeight+BaseHeight)
 difference(){
 offset(r=RidgeWidth)
-BasewithRim();
-BasewithRim();
+ScannedBase();
+ScannedBase();
 }
+    translate([-56,-3.5,-BaseHeight])
+    rotate(-21.15)
+    cube([100,140,RidgeHeight+BaseHeight]);
 }
 ;
-
-module FullRim() {
-color("#FF7514")
-linear_extrude(BaseHeight)
-difference(){
-offset(r=RidgeRimWidth)
-ScannedBase();
-ScannedBase();
-}
 }
 ;
 
 
-intersection(){
-    union(){
+    
 difference(){
     FullRidge();
     translate([0,0,1])
@@ -78,22 +74,20 @@ difference(){
     hull()
     ExtrudedEdge();
 }
-    FullRim();
-    }
-    translate([-56,-3.5,0])
-    rotate(-21.15)
-    cube([100,140,6]);
-}
-;
+
+
 }
 ;
 
 
 module EdgeGuard() {
-    union(){
+translate([0,0,BaseHeight])
+union(){
 ExtrudedEdge();
 Ridge();    
 }
 }
+
+
 
 EdgeGuard();

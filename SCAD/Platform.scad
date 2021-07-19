@@ -12,7 +12,7 @@ use <IndentsKnob.scad>
 module
 Platform_unrotated()
 {
-    translate([-(RidgeRimWidth+RidgeWidth), (RidgeRimWidth+RidgeWidth), 0])
+    translate([-(RidgeWidth), (RidgeWidth), 0])
     union()
     {
         if(USESTL) {

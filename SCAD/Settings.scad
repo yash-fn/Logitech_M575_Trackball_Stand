@@ -1,5 +1,6 @@
 PlatformRotate=16;
-PlatformRotateTranslate=[17.4626,16.6,0];
+PlatformRotateTranslate=[-1.41295,-7.6692,0];
+Guidelines=false;
 
 PlatformAngle = 15;
 Platform_XYZ = [ 100, 135.5 , 45];

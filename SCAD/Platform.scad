@@ -12,7 +12,6 @@ use <IndentsKnob.scad>
 module
 Platform_unrotated()
 {
-    translate([-(RidgeWidth), (RidgeWidth), 0])
     union()
     {
         if(USESTL) {
@@ -30,13 +29,23 @@ Platform_unrotated()
 module
 Platform()
 {
+
+    translate([-(RidgeWidth), (RidgeWidth), 0])
     translate(PlatformRotateTranslate)
+    
+    translate([Knob_Center.x,Knob_Center.y,0]) //undo center on knob
     rotate(PlatformRotate)
+    translate([-Knob_Center.x,-Knob_Center.y,0]) //center on knob
+    
     Platform_unrotated();
 }
 
-// intersection(){ //To determine PlatformRotateTranslate variable
+intersection(){ //To determine PlatformRotateTranslate variable
 Platform();
-// cube([1,160,1]);
-// }
+if (Guidelines) {
+ cube([1,160,1]);
+ translate([-160,-1,0])
+ cube([160,1,1]);
+}
+}
 

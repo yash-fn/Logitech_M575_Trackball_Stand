@@ -27,16 +27,21 @@ Platform_unrotated()
 }
 
 module
-Platform()
+RotatePlatform()
 {
-
     translate([-(RidgeWidth), (RidgeWidth), 0])
     translate(PlatformRotateTranslate)
     
     translate([Knob_Center.x,Knob_Center.y,0]) //undo center on knob
     rotate(PlatformRotate)
     translate([-Knob_Center.x,-Knob_Center.y,0]) //center on knob
-    
+    children();
+}
+
+module
+Platform()
+{
+    RotatePlatform()
     Platform_unrotated();
 }
 

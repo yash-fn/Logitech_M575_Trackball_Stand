@@ -3,7 +3,7 @@ PlatformRotateTranslate=[-1.41295,-7.6692,0];
 Guidelines=false;
 
 PlatformAngle = 15;
-Platform_XYZ = [ 100, 135.5 , 45];
+Platform_XYZ = [ 100, 135.5 , 45]; //Dimensions after z plane (not y plane) rotation
 
 USESTL=false;
 

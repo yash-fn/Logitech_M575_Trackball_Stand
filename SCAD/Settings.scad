@@ -1,8 +1,15 @@
+PlatformAngle = 45;
+CornerRimWidth = 3.2;
+
+RidgeWidth = 3.2+2;
+
+PlatformTranslateOffset=((-pow(1.071782995, PlatformAngle) + 172.21)/PlatformAngle) - .36 + RidgeWidth;
+
 PlatformRotate=16;
-PlatformRotateTranslate=[-1.41295,-7.6692,0];
+PlatformRotateTranslate=[-1.413+PlatformTranslateOffset,-5.60,0];
 Guidelines=false;
 
-PlatformAngle = 30;
+
 Platform_XYZ = [ 100, 135.5 , 45]; //Dimensions after z plane (not y plane) rotation
 
 USESTL=false;
@@ -17,9 +24,7 @@ KnobRimRadius_add = 0.3;
 Knob_Center = [ -70.725, 73.95 ];
 HoleFillCenter = [ -70.725, 73.95 ];
 
-CornerRimWidth = 3.2;
 
-RidgeWidth = 3.2+2;
 RidgeHeight = 3;
 
 

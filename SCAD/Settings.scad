@@ -17,9 +17,9 @@ KnobRimRadius_add = 0.3;
 Knob_Center = [ -70.725, 73.95 ];
 HoleFillCenter = [ -70.725, 73.95 ];
 
-CornerRimWidth = 1.2 + 2;
+CornerRimWidth = 3.2;
 
-RidgeWidth = 4+1.2;
+RidgeWidth = 3.2+2;
 RidgeHeight = 3;
 
 

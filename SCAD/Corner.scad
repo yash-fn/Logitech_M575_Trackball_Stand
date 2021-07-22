@@ -73,7 +73,7 @@ module Corner() {
 
 MainCorner();
 Rim();
-TabCorner();
+//TabCorner();
 
 }
 

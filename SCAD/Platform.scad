@@ -45,6 +45,8 @@ Platform()
     Platform_unrotated();
 }
 
+difference(){
+rotate([0,PlatformAngle,0,])
 intersection(){ //To determine PlatformRotateTranslate variable
 Platform();
 if (Guidelines) {
@@ -52,5 +54,9 @@ if (Guidelines) {
  translate([-160,-1,0])
  cube([160,1,1]);
 }
+}
+
+translate([0,0,-Platform_XYZ.z])
+cube(Platform_XYZ);
 }
 

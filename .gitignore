@@ -1,4 +1,6 @@
 STL
 Cura
 Scans/NoGit
-Scans/Photogrammetry/
+Scans/Photogrammetry/*
+!Scans/Photogrammetry/*.stl
+.Rproj.user
